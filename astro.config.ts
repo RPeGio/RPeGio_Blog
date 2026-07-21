@@ -43,7 +43,7 @@ export default defineConfig({
   // adapter: cloudflare(),
   // Local (standalone)
   // adapter: node({ mode: 'standalone' }),
-  output: 'server',
+  output: 'static',
 
   // [Assets]
   image: {
