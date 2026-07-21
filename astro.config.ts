@@ -40,10 +40,10 @@ export default defineConfig({
 
   // [Adapter]
   // https://docs.astro.build/en/guides/deploy/
-  adapter: cloudflare({
-    imageService: 'passthrough'
-  }),
-  output: 'server',
+  // adapter: cloudflare({
+  //   imageService: 'passthrough'
+  // }),
+  output: 'static',
   // Local (standalone)
   // adapter: node({ mode: 'standalone' }),
   // output: 'server',
