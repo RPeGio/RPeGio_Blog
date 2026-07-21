@@ -40,10 +40,7 @@ export default defineConfig({
 
   // [Adapter]
   // https://docs.astro.build/en/guides/deploy/
-  adapter: cloudflare({
-    imageService: 'passthrough'
-  }),
-  output: 'server',
+  adapter: cloudflare(),
   // Local (standalone)
   // adapter: node({ mode: 'standalone' }),
   // output: 'server',
@@ -51,8 +48,7 @@ export default defineConfig({
   // [Assets]
   image: {
     responsiveStyles: true,
-    service: { entrypoint: 'astro/assets/services/sharp' },
-    // domains: ['ghchart.rshah.org'],
+    // 移除 sharp entrypoint，让 adapter 的 passthrough 生效
     remotePatterns: [{ protocol: 'https' }]
   },
   // Font optimization — disabled for local dev due to Fontshare CDN fetch errors
@@ -123,10 +119,10 @@ export default defineConfig({
     svgOptimizer: svgoOptimizer(),
     // Enables pre-rendering your prefetched pages on the client in supported browsers.
     // https://docs.astro.build/en/reference/experimental-flags/client-prerender/
-    clientPrerender: true,
+    // clientPrerender: true,
     // https://docs.astro.build/en/reference/experimental-flags/queued-rendering/
-    queuedRendering: {
-      enabled: true
-    }
+    // queuedRendering: {
+    //   enabled: true
+    // }
   }
 })
