@@ -51,10 +51,8 @@ export default defineConfig({
   // [Assets]
   image: {
     responsiveStyles: true,
-    // service: { entrypoint: 'astro/assets/services/passthrough' },
-    // domains: ['ghchart.rshah.org'],
+    service: { entrypoint: 'astro/assets/services/noop' },
     remotePatterns: [{ protocol: 'https' }]
-    // remotePatterns: []
   },
   // Font optimization — disabled for local dev due to Fontshare CDN fetch errors
   // To re-enable, see: https://docs.astro.build/en/guides/fonts/
