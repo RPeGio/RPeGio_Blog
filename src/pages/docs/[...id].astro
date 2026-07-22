@@ -12,6 +12,7 @@ import DocsContents from './DocsContents.astro'
 export const prerender = true
 
 export async function getStaticPaths() {
+  if (import.meta.env.PROD) return []
   const posts = sortMDByDate(await getBlogCollection('docs'))
   return posts.map((post) => ({
     params: { id: post.id },

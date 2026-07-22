@@ -54,6 +54,7 @@ const renderContent = async (post: CollectionEntry<'docs'>, site: URL) => {
 }
 
 const GET = async (context: AstroGlobal) => {
+  if (import.meta.env.PROD) return new Response(null, { status: 404 })
   const allPostsByDate = sortMDByDate(await getBlogCollection('docs')) as CollectionEntry<'docs'>[]
   const siteUrl = context.site ?? new URL(import.meta.env.SITE)
 

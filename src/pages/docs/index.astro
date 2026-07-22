@@ -6,6 +6,11 @@ import { integ } from '@/site-config'
 
 import DocsContents from './DocsContents.astro'
 
+// Hide docs in production
+if (import.meta.env.PROD) {
+  return Astro.redirect('/')
+}
+
 const meta = {
   title: 'Docs',
   description: 'Docs content documentation'
