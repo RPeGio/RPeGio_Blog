@@ -112,6 +112,13 @@ export default defineConfig({
     AstroPureIntegration(config)
   ],
 
+  // [Vite] — 排除 astro-pure 的虚拟模块 (virtual:config) 被预构建扫描
+  vite: {
+    optimizeDeps: {
+      exclude: ['astro-pure']
+    }
+  },
+
   // [Experimental]
   experimental: {
     // Allow compatible editors to support intellisense features for content collection entries
