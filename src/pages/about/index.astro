@@ -8,59 +8,46 @@ const headings = [
   { depth: 2, slug: 'hobbies', text: 'Hobbies' },
   { depth: 2, slug: 'tools', text: 'Tools' },
   { depth: 2, slug: 'social-networks', text: 'Social Networks' },
-  { depth: 2, slug: 'gossips', text: 'Gossips' },
+  // { depth: 2, slug: 'gossips', text: 'Gossips' },
   { depth: 2, slug: 'about-blog', text: 'About Blog' }
 ]
 ---
 
 <PageLayout title='About' {headings} comment>
-  <p>Developer / Designer</p>
+  <p>大一本科在读 / 全栈开发 / Rustacean / 音乐人 / 英语区佛系烤肉man</p>
   <p>
-    Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione indoctum
-    dissentiunt, cu meliore fuisset mei, vel quod voluptua ne. Ex dicat impedit mel, at eum oratio
-    possit voluptatum.
+    就读于东莞理工学院软件工程专业的工科男
   </p>
   <p>
-    Motto: Stay hungry, Stay foolish. <Spoiler>这里可以夹私货，比如为什么要演奏春日影！</Spoiler>
+    <Spoiler>67676767676767676767676767676767</Spoiler>
   </p>
   <Button title='Sponsor Me' class='w-fit' href='/projects#sponsorship' variant='ahead' />
 
   {/* general-talk */}
   <h2 id='hobbies'>Hobbies</h2>
   <ul>
-    <li>Lorem ipsum dolor sit amet, vidit suscipit at mei.</li>
-    <li>
-      Quem denique mea id. Usu ei regione indoctum dissentiunt, cu meliore fuisset mei, vel quod
-      voluptua ne.
-    </li>
-    <li>Ex dicat impedit mel, at eum oratio possit voluptatum.</li>
-    <li>Impetus fuisset ullamcorper pri cu, his posse iisque ad, aliquam honestatis usu id.</li>
+    <li>Rust / AI Agent开发</li>
+    <li>电子音乐创作</li>
+    <li>玩音游</li>
+    <li>原神考据, 深挖游戏设定</li>
+    <li>创作音游谱面</li>
+    <li>yu-gi-oh</li>
+    <li>烤肉</li>
+    <li>打台球</li>
   </ul>
 
   {/* tools */}
   <h2 id='tools'>Tools</h2>
-  <p>Current support tools as follow:</p>
+  <p>Tools that I use:</p>
   <ToolSection
     class='mb-5'
-    title='Design'
+    title='Design & Editing'
     tools={[
       {
         name: 'Photoshop',
         description: 'Picture Editing',
         href: 'https://www.adobe.com/products/photoshop',
         icon: import('@/assets/tools/photoshop.svg?raw')
-      },
-      {
-        name: 'Illustrator',
-        description: 'Vector Drawing',
-        href: 'https://www.adobe.com/products/illustrator',
-        icon: import('@/assets/tools/illustrator.svg?raw')
-      },
-      {
-        name: 'After Effects',
-        description: 'Motion Graphics',
-        href: 'https://www.adobe.com/products/aftereffects',
-        icon: import('@/assets/tools/aftereffects.svg?raw')
       },
       {
         name: 'Premiere Pro',
@@ -70,7 +57,7 @@ const headings = [
       }
     ]}
   />
-  <ToolSection
+  <!-- <ToolSection
     class='mb-5'
     title='Productivity'
     tools={[
@@ -81,25 +68,13 @@ const headings = [
         icon: import('@/assets/tools/chrome.svg?raw')
       },
       {
-        name: 'Firefox',
-        description: 'Browser',
-        href: 'https://www.mozilla.org/en-US/firefox',
-        icon: import('@/assets/tools/firefox.svg?raw')
-      },
-      {
-        name: 'Notion',
-        description: 'Note Taking',
-        href: 'https://www.notion.so/',
-        icon: import('@/assets/tools/notion.svg?raw')
-      },
-      {
         name: 'Typora',
         description: 'Markdown Editor',
         href: 'https://typora.io/',
         icon: import('@/assets/tools/typora.svg?raw')
       }
     ]}
-  />
+  /> -->
   <ToolSection
     class='mb-5'
     title='Development'
@@ -111,14 +86,8 @@ const headings = [
         icon: import('@/assets/tools/vscode.svg?raw')
       },
       {
-        name: 'Neovim',
-        description: 'IDE',
-        href: 'https://neovim.io/',
-        icon: import('@/assets/tools/neovim.svg?raw')
-      },
-      {
         name: 'Sublime Text',
-        description: 'IDE',
+        description: 'Plain Text Editor',
         href: 'https://www.sublimetext.com/',
         icon: import('@/assets/tools/sublime.svg?raw')
       }
@@ -129,22 +98,10 @@ const headings = [
     title='Environment'
     tools={[
       {
-        name: 'Arch Linux',
-        description: 'Linux Distribution',
-        href: 'https://archlinux.org/',
-        icon: import('@/assets/tools/archlinux.svg?raw')
-      },
-      {
         name: 'Ubuntu 24.04 LTS',
         description: 'Linux Distribution',
         href: 'https://ubuntu.com/',
         icon: import('@/assets/tools/ubuntu.svg?raw')
-      },
-      {
-        name: 'MacOS Tahoe',
-        description: 'MacBook Air',
-        href: 'https://www.apple.com/macos/',
-        icon: import('@/assets/tools/apple.svg?raw')
       },
       {
         name: 'Windows 11',
@@ -164,38 +121,29 @@ const headings = [
   <Substats
     stats={[
       {
+        platform: 'Bilibili',
+        icon: 'bilibili',
+        link: 'https://space.bilibili.com/430187058',
+        text: 'subscribers',
+        color: '#0087bd',
+      },
+      {
         platform: 'GitHub',
         icon: 'github',
-        link: 'https://github.com/cworld1',
+        link: 'https://github.com/rpegio',
         text: 'followers',
-        api: 'github/cworld1'
-      },
-      {
-        platform: 'Telegram',
-        icon: 'telegram',
-        color: '#2ca5e0',
-        link: 'https://t.me/cworld0_cn',
-        text: 'subscribers',
-        api: 'telegram/cworld0_cn'
-      },
-      {
-        platform: 'Steam',
-        icon: 'steam',
-        color: '#50769d',
-        link: 'https://steamcommunity.com/id/cworld',
-        text: 'games',
-        api: 'steamgames/76561199021278120'
+        api: 'github/rpegio'
       }
     ]}
   />
 
-  {/* gossips */}
+  <!-- {/* gossips */}
   <h2 id='gossips'>Gossips</h2>
   <Collapse title='Lorem ipsum'>
     Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione indoctum
     dissentiunt, cu meliore fuisset mei, vel quod voluptua ne. Ex dicat impedit mel, at eum oratio
     possit voluptatum.
-  </Collapse>
+  </Collapse> -->
 
   {/* about-blog */}
   <h2 id='about-blog'>About Blog</h2>
@@ -203,18 +151,18 @@ const headings = [
   <Timeline
     events={[
       {
-        date: '2024-04-29',
+        date: '2026-07-28',
         content:
-          'Website refactored using <a href="https://astro.build/" target="_blank">Astro</a> and <a href="https://github.com/srleom/astro-theme-resume" target="_blank">Astro Theme Resume</a>'
+          'Website built entirely'
       },
       {
-        date: '2024-07-26',
+        date: '2026-07-27',
         content:
-          'Website abstracted as a theme and published on <a href="https://github.com/RPeGio/RPeGio_Blog"target="_blank">Github</a>'
+          'First blog post published'
       },
       {
-        date: '2024-07-27',
-        content: 'Began writing website docs'
+        date: '2026-07-20',
+        content: 'Website launched'
       }
     ]}
   />
@@ -223,7 +171,7 @@ const headings = [
     technical support provided by the following excellent projects/service providers:
   </p>
   <ul>
-    <li>Domain: <a href='#' target='_blank'>Vercel</a></li>
+    <li>Domain: <a href='https://www.aliyun.com/' target='_blank'>Aliyun</a></li>
     <li>
       Framework & Theme: <a href='https://astro.build/' target='_blank'>Astro</a> + <a
         href='https://github.com/RPeGio/RPeGio_Blog'
@@ -231,10 +179,10 @@ const headings = [
       >
     </li>
     <li>
-      Site hosting: <a href='https://vercel.com/' target='_blank'>Vercel</a>
+      Site hosting: <a href='https://cloudflare.com/' target='_blank'>Cloudflare</a>
     </li>
     <li>
-      CI/CD: <a href='https://vercel.com/workflow' target='_blank'>Vercel Workflow</a>
+      CI/CD: <a href='https://www.cloudflare.com/products/workers/' target='_blank'>Cloudflare Workers</a>
     </li>
     <li>Comment system: <a href='https://waline.js.org' target='_blank'>Waline</a></li>
     <li>

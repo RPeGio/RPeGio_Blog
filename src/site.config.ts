@@ -7,7 +7,7 @@ export const theme: ThemeUserConfig = {
   /** Will be used in index page & copyright declaration */
   author: 'RPeGio',
   /** Description metadata for your website. Can be used in page metadata. */
-  description: '',
+  description: 'RPeGio\'s personal blog',
   /** The default favicon for your site which should be a path to an image in the `public/` directory. */
   favicon: '/favicon/favicon.ico',
   /** The default social card image for your site which should be a path to an image in the `public/` directory. */
@@ -108,25 +108,25 @@ export const theme: ThemeUserConfig = {
 export const integ: IntegrationUserConfig = {
   // [Links]
   // https://astro-pure.js.org/docs/integrations/links
-  // links: {
+  links: {
     // Friend logbook
-    // logbook: [
-    //   { date: '2025-03-16', content: 'Is there a leakage?' },
-    //   { date: '2025-03-16', content: 'A leakage of what?' },
-    //   { date: '2025-03-16', content: 'I have a full seat of water, like, full of water!' },
-    //   { date: '2025-03-16', content: 'Must be the water.' },
-    //   { date: '2025-03-16', content: "Let's add that to the words of wisdom." }
-    // ],
-    // // Yourself link info
-    // applyTip: [
-    //   { name: 'Name', val: theme.title },
-    //   { name: 'Desc', val: theme.description || 'Null' },
-    //   { name: 'Link', val: 'https://astro-pure.js.org/' },
-    //   { name: 'Avatar', val: 'https://astro-pure.js.org/favicon/favicon.ico' }
-    // ],
+    logbook: [
+      // { date: '2025-03-16', content: 'Is there a leakage?' },
+      // { date: '2025-03-16', content: 'A leakage of what?' },
+      // { date: '2025-03-16', content: 'I have a full seat of water, like, full of water!' },
+      // { date: '2025-03-16', content: 'Must be the water.' },
+      // { date: '2025-03-16', content: "Let's add that to the words of wisdom." }
+    ],
+    // Yourself link info
+    applyTip: [
+      { name: 'Name', val: theme.title },
+      { name: 'Desc', val: theme.description || 'Null' },
+      { name: 'Link', val: 'https://rpegio.top' },
+      { name: 'Avatar', val: 'https://rpegio.top/favicon/favicon.ico' }
+    ],
     // Cache avatars in `public/avatars/` to improve user experience.
-  //   cacheAvatar: false
-  // },
+    cacheAvatar: false,
+  },
   // [Search]
   pagefind: true,
   // Add a random quote to the footer (default on homepage footer)
