@@ -63,11 +63,12 @@ export const theme: ThemeUserConfig = {
     // year: `© 2019 - ${new Date().getFullYear()}`,
     links: [
       // Registration link
-      // {
-      //   title: 'Moe ICP 114514',
-      //   link: 'https://icp.gov.moe/?keyword=114514',
-      //   style: 'text-sm' // Uno/TW CSS class
-      // },
+      {
+        title: '粤ICP备2026178760号-1',
+        link: 'https://beian.miit.gov.cn/',
+        style: 'text-sm', // Uno/TW CSS class
+        pos: 2 // position set to 2 will be appended to copyright line
+      }
       // Privacy Policy link
       // {
       //   title: 'Site Policy',
