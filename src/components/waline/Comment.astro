@@ -12,7 +12,7 @@ const { class: className } = Astro.props
   config.integ.waline.enable && (
     <comment-component>
       <div id='waline' class={cn('not-prose', className)}>
-        评论加载中…
+        Comment seems to stuck. Try to refresh?✨
       </div>
     </comment-component>
   )
@@ -56,7 +56,7 @@ const { class: className } = Astro.props
 </script>
 
 {
-  !config.integ.waline.showMeta && (
+  config.integ.waline.showMeta &&(
     <style> #waline :global(.wl-meta) { display: none; } </style>
   )
 }

@@ -1,16 +1,27 @@
-<script>
-  import { pageviewCount } from '@waline/client/pageview'
+---
+// https://waline.js.org/en/guide/features/pageview.html#use-alone
+import config from '@/site-config'
+---
 
-  const el = document.querySelector<HTMLElement>('.waline-pageview-count')
-
-  if (el) {
+<script
+  is:inline
+  type='module'
+  data-astro-rerun
+  define:vars={{ npmCDN: config.npmCDN, walineServer: config.integ.waline.server }}
+>
+  async function loadPageview() {
     try {
-      pageviewCount({
-        serverURL: el.dataset.server || '',
-        path: el.dataset.path || window.location.pathname
-      })
-    } catch (error) {
-      console.error('Failed to load Waline pageview:', error)
+      const pageview = await import(`${npmCDN}/@waline/client@v3/dist/pageview.js`)
+      const el = document.querySelector('.waline-pageview-count')
+      if (el) {
+        pageview.pageviewCount({
+          serverURL: walineServer,
+          path: window.location.pathname
+        })
+      }
+    } catch (e) {
+      console.error('Failed to load Waline pageview:', e)
     }
   }
+  loadPageview()
 </script>

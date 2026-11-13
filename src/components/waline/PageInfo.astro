@@ -1,7 +1,6 @@
 ---
 import { cn } from 'astro-pure/utils'
 import Pageview from '@/components/waline/Pageview.astro'
-import config from '@/site-config'
 
 interface Props {
   view?: boolean
@@ -15,17 +14,13 @@ const path = Astro.url.pathname
 ---
 
 <div class={cn('text-base text-sm text-muted-foreground', className)} {...props}>
-  <span
-    class='waline-pageview-count'
-    data-path={path}
-    data-server={config.integ.waline.server}
-  ></span> 阅读
+  <span class='waline-pageview-count' data-path={path}></span> views
   {
     comment && (
       <>
         {' | '}
         <a href='#waline'>
-          <span class='waline-comment-count' data-path={path} /> 评论
+          <span class='waline-comment-count' data-path={path} /> comments
         </a>
       </>
     )
