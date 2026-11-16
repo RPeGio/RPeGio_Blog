@@ -1,0 +1,100 @@
+---
+import { cn } from 'astro-pure/utils'
+
+interface Props {
+  /** 动态标题 */
+  title: string
+  /** 更新日期，直接按填入的文本展示，例如 2026-11-16 */
+  date: string
+  /** 点击整块卡片跳转的链接，可站内路径或完整 URL */
+  href: string
+  /** 可选的一行补充说明 */
+  description?: string
+  class?: string
+}
+
+const { title, date, href, description, class: className } = Astro.props
+const isExternal = /^https?:\/\//.test(href)
+---
+
+<a
+  class={cn('recent-update group', className)}
+  href={href}
+  target={isExternal ? '_blank' : undefined}
+  rel={isExternal ? 'noopener noreferrer' : undefined}
+>
+  <div class='recent-update-content'>
+    <div class='flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1'>
+      <h3 class='text-base font-medium'>{title}</h3>
+      <span class='text-sm text-muted-foreground'>{date}</span>
+    </div>
+    {description && <p class='text-sm text-muted-foreground'>{description}</p>}
+    <p class='text-xs italic text-muted-foreground break-all'>{href}</p>
+  </div>
+</a>
+
+<style>
+  /* 让 conic-gradient 的起始角度可被动画插值 */
+  @property --recent-angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+  }
+
+  .recent-update {
+    --recent-angle: 0deg;
+    display: block;
+    width: 100%;
+    border: 2px solid transparent;
+    border-radius: 1rem;
+    background:
+      linear-gradient(hsl(var(--background)), hsl(var(--background))) padding-box,
+      conic-gradient(
+          from var(--recent-angle),
+          #5eead4,
+          #60a5fa,
+          #a78bfa,
+          #f472b6,
+          #fbbf24,
+          #5eead4
+        )
+        border-box;
+    text-decoration: none;
+    animation: recent-update-spin 8s linear infinite;
+    transition:
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .recent-update-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.875rem 1.125rem;
+    border-radius: calc(1rem - 2px);
+  }
+
+  .recent-update:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px -12px hsl(var(--foreground) / 0.35);
+    animation-duration: 3s;
+  }
+
+  .recent-update:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  @keyframes recent-update-spin {
+    to {
+      --recent-angle: 360deg;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .recent-update,
+    .recent-update:hover {
+      animation: none;
+    }
+  }
+</style>

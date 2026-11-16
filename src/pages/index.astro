@@ -7,9 +7,20 @@ import { getBlogCollection, sortMDByDate } from 'astro-pure/server'
 import { Button, Card, Icon, Label } from 'astro-pure/user'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import ProjectCard from '@/components/home/ProjectCard.astro'
+import RecentUpdate from '@/components/home/RecentUpdate.astro'
 import Section from '@/components/home/Section.astro'
 import SkillLayout from '@/components/home/SkillLayout.astro'
 import config from '@/site-config'
+
+// 近期动态：按需增删条目，第一条显示在最上面
+const recentUpdates = [
+  {
+    title: 'BOF22 队伍Micore_D 评价期间',
+    date: '2026/10/16 23:00 - 2026/12/6 23:59',
+    href: 'https://manbow.nothing.sh/event/event_teamprofile.cgi?event=152&team=73',
+    description: '进入会场支持我们队伍及我的作品《Into the HIVE》！'
+  }
+]
 
 const languages = ['Rust', 'C/C++', 'Python', 'SQL']
 const frontend = ['TypeScript', 'Vue3', 'React', 'Nuxt.js', 'TailwindCSS']
@@ -76,6 +87,20 @@ if (!images[imagePath])
     </section>
 
     <div id='content' class='animate flex flex-col gap-y-10 md:w-4/5 lg:w-5/6'>
+      {
+        recentUpdates.length > 0 && (
+          <div class='flex flex-col gap-y-3'>
+            {recentUpdates.map((item) => (
+              <RecentUpdate
+                title={item.title}
+                date={item.date}
+                href={item.href}
+                description={item.description}
+              />
+            ))}
+          </div>
+        )
+      }
       <Section title='About'>
         <em class='text-muted-foreground'>大二本科在读 / 全栈开发 / Rustacean / 音乐人 / 英语区佛系烤肉man</em>
         <p class='text-muted-foreground'>
